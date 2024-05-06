@@ -1,10 +1,15 @@
-const PORT = process.env.PORT || 8000
-const express = require('express')
-const axios = require('axios')
+const PORT = process.env.PORT || 3000
+const express = require('../node_modules/express')
+const cors = require('../node_modules/cors');
+const corsOptions = {
+    "origin": "*",
+    optionsSuccessStatus: 200
+}
 
 const app = express()
-
 let counters = {}
+
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
     // Set the Access-Control-Allow-Origin header to allow requests from a specific origin
@@ -16,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.json('API counter')
+    res.json('Greenpeace Nordic API')
 })
 
 app.get('/SET', async (req, res) => {
@@ -55,4 +60,4 @@ app.get('/GET', async (req, res) => {
     }
 })
 
-app.listen(PORT)
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
