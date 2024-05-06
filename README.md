@@ -42,4 +42,4 @@ npm start
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Author
-Svilena Koleva
+<a href="https://github.com/elncetoo">Svilena Koleva</s>
